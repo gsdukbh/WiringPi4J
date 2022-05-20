@@ -9,7 +9,7 @@ import com.sun.jna.Native;
  * @since on  2022/5/11
  */
 public interface Pi4j extends Library {
-    //
+    //  a
     // Mask for the bottom 64 pins which belong to the Raspberry Pi
     //	The others are available for the other devices
     int PI_GPIO_MASK = 0xFFFFFFC0;
