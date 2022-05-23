@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SshConfigs">
-    <configs>
-      <sshConfig host="pi.werls.top" id="cfb4999f-437f-4ff3-8b3f-2b9b34286a8f" keyPath="$USER_HOME$/.ssh/kke" port="22222" nameFormat="DESCRIPTIVE" username="root" useOpenSSHConfig="true" />
-    </configs>
-  </component>
-</project>

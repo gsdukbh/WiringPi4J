@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'top.werls.pi4j'
@@ -8,13 +9,37 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-
 dependencies {
 
     implementation 'net.java.dev.jna:jna:5.11.0'
     implementation 'net.java.dev.jna:jna-platform:5.11.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+publishing {
+    publications {
+        library(MavenPublication) {
+            from components.java
+        }
+    }
+    ext{
+        CI_API_V4_URL="https://git.werls.top/api/v4/"
+    }
+    repositories {
+        maven {
+            url "${CI_API_V4_URL}/projects/10/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = 'Job-Token'
+                value = System.getenv("CI_JOB_TOKEN")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+
 }
 
 test {
