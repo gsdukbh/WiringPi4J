@@ -25,6 +25,7 @@ publishing {
     }
     ext{
         CI_API_V4_URL="https://git.werls.top/api/v4/"
+//      sa
     }
     repositories {
         maven {
