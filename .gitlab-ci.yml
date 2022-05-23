@@ -28,5 +28,6 @@ deploy-job:
     script:
         - 'gradle publish'
     only:
-        - main
+        - tags
+        
 
