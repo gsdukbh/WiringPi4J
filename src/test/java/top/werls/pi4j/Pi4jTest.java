@@ -3,12 +3,10 @@ package top.werls.pi4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * @author Jiawei Lee
  * @version TODO
- * @since on  2022/5/20
+ * @since on 2022/5/20
  */
 class Pi4jTest {
     Pi4j pi4j = Pi4j.INSTANCE;
@@ -40,7 +38,7 @@ class Pi4jTest {
 
     @Test
     void pinMode4j() {
-        //  pin 15 is fan
+        // pin 15 is fan
         pi4j.wiringPiSetup4j();
         pi4j.pinMode4j(15, Pi4j.INPUT);
     }
@@ -66,7 +64,8 @@ class Pi4jTest {
     @Test
     void digitalRead84j() {
         pi4j.wiringPiSetup4j();
-        assert pi4j.digitalRead84j(15) == Pi4j.HIGH || pi4j.digitalRead84j(15) == Pi4j.LOW;
+        System.out.println(pi4j.digitalRead84j(15));
+        assert pi4j.digitalRead84j(15).intValue() == Pi4j.HIGH || pi4j.digitalRead84j(15).intValue() == Pi4j.LOW;
     }
 
     @Test
@@ -96,25 +95,25 @@ class Pi4jTest {
     @Test
     void wiringPiSetupPiFace4j() {
         pi4j.wiringPiSetup4j();
-         pi4j.wiringPiSetupPiFace4j() ;
+        pi4j.wiringPiSetupPiFace4j();
     }
 
     @Test
     void wiringPiSetupPiFaceForGpioProg4j() {
         pi4j.wiringPiSetup4j();
-        pi4j.wiringPiSetupPiFaceForGpioProg4j() ;
+        pi4j.wiringPiSetupPiFaceForGpioProg4j();
     }
 
     @Test
     void piGpioLayout4j() {
         pi4j.wiringPiSetup4j();
-         pi4j.piGpioLayout4j() ;
+        pi4j.piGpioLayout4j();
     }
 
     @Test
     void piBoardRev4j() {
         pi4j.wiringPiSetup4j();
-        pi4j.piBoardRev4j() ;
+        pi4j.piBoardRev4j();
     }
 
     @Test
@@ -162,7 +161,7 @@ class Pi4jTest {
     @Test
     void pwmSetClock4j() {
         pi4j.wiringPiSetup4j();
-//        pi4j.pwmSetClock4j(1024);
+        // pi4j.pwmSetClock4j(1024);
     }
 
     @Test
@@ -208,7 +207,7 @@ class Pi4jTest {
     @Test
     void delay4j() {
         pi4j.wiringPiSetup4j();
-        pi4j.delay4j(1000);//1s
+        pi4j.delay4j(1000);// 1s
     }
 
     @Test

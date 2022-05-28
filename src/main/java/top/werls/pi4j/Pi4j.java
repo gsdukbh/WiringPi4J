@@ -179,7 +179,7 @@ public interface Pi4j extends Library {
      */
     int digitalRead4j(int pin);
 
-    int digitalRead84j(int pin);
+    UnsignedInt digitalRead84j(int pin);
 
     void digitalWrite84j(int pin, int value);
 
@@ -284,9 +284,7 @@ public interface Pi4j extends Library {
 
     void gpioClockSet4j(int pin, int freq);
 
-    int digitalReadByte4j();
-
-    int digitalReadByte24j();
+    UnsignedInt digitalReadByte4j();
 
     /**
      * This writes the 8-bit byte supplied to the first 8 GPIO pins.
@@ -334,7 +332,7 @@ public interface Pi4j extends Library {
      * Note that the maximum delay is an unsigned 32-bit integer or approximately 49 days.
      * @param howLong milliseconds
      */
-    void delay4j(int howLong);
+    void delay4j(long howLong);
 
     /**
      * This causes program execution to pause for at least howLong microseconds.
@@ -348,7 +346,7 @@ public interface Pi4j extends Library {
      *
      * @param howLong microseconds
      */
-    void delayMicroseconds4j(int howLong);
+    void delayMicroseconds4j(long howLong);
 
     /**
      * This returns a number representing the number of milliseconds
@@ -357,7 +355,7 @@ public interface Pi4j extends Library {
      *
      * @return bit 32-bits
      */
-    int millis4j();
+    UnsignedInt millis4j();
 
     /**
      * This returns a number representing the number of microseconds since your
@@ -366,5 +364,5 @@ public interface Pi4j extends Library {
      *
      * @return bit 32-bits
      */
-    int micros4j();
+    UnsignedInt micros4j();
 }
