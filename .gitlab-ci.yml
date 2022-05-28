@@ -23,14 +23,6 @@ build-job:       # This job runs in the build stage, which runs first.
   script:
     - gradle build -x test
     - echo "Compile complete."
-
-test-job:         # This job runs in the test stage, which runs second.
-  stage: test
-  tags: 
-    - arm64-pi
-  script:
-    - gradle test
-    - echo "Tests complete."
 deploy-job:
     stage: deploy
     script:

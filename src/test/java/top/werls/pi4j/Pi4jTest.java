@@ -17,6 +17,23 @@ class Pi4jTest {
     }
 
     @Test
+    void example() {
+        try {
+            // 初始化
+            pi4j.wiringPiSetup4j();
+            int fan = 15;
+            // pin 15 输出模式
+            pi4j.pinMode4j(fan, Pi4j.OUTPUT);
+            // 高电平
+            pi4j.digitalWrite4j(fan, Pi4j.HIGH);
+            Thread.sleep(3000);
+            pi4j.digitalWrite4j(fan, Pi4j.LOW);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     void wiringPiSetup4j() {
         assert pi4j.wiringPiSetup4j() == 0;
     }
